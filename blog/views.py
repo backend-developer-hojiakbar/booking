@@ -9,6 +9,10 @@ from rest_framework import status, viewsets, mixins, generics
 from functools import reduce
 from rest_framework.views import APIView
 
+class ResortViewSet(viewsets.ModelViewSet):
+    queryset = Resort.objects.all()
+    serializer_class = ResortSerializer
+
 class AllInfoDataView(APIView):
     def get(self, request, *args, **kwargs):
         resort_data = Resort.objects.all()
@@ -29,9 +33,7 @@ class AllInfoDataView(APIView):
         all_info_serializer = AllInfoSerializer(all_info)
         # return Response(all_info_serializer.data)
         return Response(all_info)
-class ResortViewSet(viewsets.ModelViewSet):
-    queryset = Resort.objects.all()
-    serializer_class = ResortSerializer
+
 
 class BookingCreateAPIView(generics.CreateAPIView):
     queryset = Booking.objects.all()
