@@ -14,7 +14,7 @@ from rest_framework_simplejwt.views import (
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="eyesBERG API",
+        title="booking API",
         default_version='v1',
         description="Mall official site description",
         terms_of_service="https://www.google.com/policies/terms/",
@@ -29,7 +29,7 @@ router = routers.DefaultRouter()
 router.register('search',
                 views.ResortSearchViewSet,
                 basename='search-resort')
-router.register(r'cleaners', views.ResortViewSet)
+router.register(r'resort', views.ResortViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
 
