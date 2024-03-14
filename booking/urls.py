@@ -34,7 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # swagger
-    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     # token
@@ -42,7 +42,7 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     path('api/v1/', include('blog.urls')),
-    path('', include(router.urls)),
+    path('router/', include(router.urls)),
     path('accounts/', include('accounts.urls')),
 ]
 app_name = 'blog'
