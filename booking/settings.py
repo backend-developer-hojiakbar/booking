@@ -7,7 +7,6 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
-print('DEBUG = ', DEBUG)
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'jazzmin',
@@ -465,5 +464,4 @@ CKEDITOR_CONFIGS = {
 }
 
 ESKIZ_EMAIL=os.getenv("ESKIZ_EMAIL")
-print("email = ", ESKIZ_EMAIL)
 ESKIZ_PASSWORD=os.getenv("ESKIZ_PASSWORD")
