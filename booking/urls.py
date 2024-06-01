@@ -37,7 +37,7 @@ urlpatterns = [
     path('', include('apps.blog.urls')),
     path('router/', include(router.urls)),
     path('users/', include('apps.users.urls')),
-    path('order/', include('apps.order.urls')),
+    # path('order/', include('apps.order.urls')),
     path('dashboard/', include('apps.admins.urls')),
 ]
 app_name = 'blog'

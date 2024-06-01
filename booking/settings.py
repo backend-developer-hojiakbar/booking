@@ -19,7 +19,6 @@ INSTALLED_APPS = [
     # local apps
     'apps.blog',
     # 'apps.account',
-    'apps.order',
     'apps.users',
     'apps.admins',
     # build apps
@@ -29,7 +28,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'parler',
-    'paycomuz',
+    # 'paycomuz',
     'djoser',
     'django_filters',
 ]
@@ -141,7 +140,7 @@ else:
     }
 
 
-ORDER_MODEL = 'apps.order.Order'
+# ORDER_MODEL = 'apps.order.Order'
 
 
 # Password validation
