@@ -35,12 +35,12 @@ INSTALLED_APPS = [
 ]
 
 PAYCOM_SETTINGS = {
-    "KASSA_ID": os.getenv('KASSA_ID'),  # token
-    "SECRET_KEY": os.getenv('KASSA_SECRET_KEY'),  # password
+    "KASSA_ID": os.getenv("KASSA_ID"),  # token
+    "SECRET_KEY": os.getenv("KASSA_SECRET_KEY"),  # password
     "ACCOUNTS": {
         "KEY": "order_id"
     },
-    "TOKEN": os.getenv('KASSA_ID')
+    "TOKEN": os.getenv("KASSA_ID")
 }
 AUTH_USER_MODEL = 'users.User'
 TINYMCE_DEFAULT_CONFIG = {
