@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     # local apps
     'apps.blog',
     # 'apps.account',
+    'apps.crm',
     'apps.users',
     'apps.admins',
     # build apps

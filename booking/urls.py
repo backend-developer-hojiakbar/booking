@@ -39,6 +39,7 @@ urlpatterns = [
     path('users/', include('apps.users.urls')),
     # path('order/', include('apps.order.urls')),
     path('dashboard/', include('apps.admins.urls')),
+    path('crm/', include('apps.crm.urls')),
 ]
 app_name = 'blog'
 if settings.DEBUG:

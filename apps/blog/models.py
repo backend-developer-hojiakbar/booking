@@ -46,6 +46,7 @@ class Category(models.Model):
 
 
 class Resort(BaseModel):
+    user = models.ForeignKey(User, models.CASCADE)
     name = models.CharField(max_length=200)
     guests_number = models.PositiveIntegerField(default=0)
     bedrooms_number = models.PositiveIntegerField(default=0)

@@ -73,6 +73,7 @@ class ResortFeedbackSerializer(serializers.ModelSerializer):
 
 
 class ResortSerializer(serializers.ModelSerializer):
+    user = SerializerMethodField()
     resort_feedbacks = ResortFeedbackSerializer(many=True, read_only=True)
     images = ImagesSerializer(many=True, read_only=True)
     uploaded_images = serializers.ListField(
@@ -98,7 +99,7 @@ class ResortSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Resort
-        fields = ('id', 'name', 'guests_number', 'bedrooms_number', 'baths_number', 'daily_price','location', 'location_name', 'mainImage', 'url', 'longtitude', 'latitude','images', 'uploaded_images', 'amenities', 'amenities_list', 'availability_dates', 'availability_dates_list', 'category', 'bedroomImages', 'bedroomUploaded_images', 'resort_feedbacks')
+        fields = ('id', "user", 'name', 'guests_number', 'bedrooms_number', 'baths_number', 'daily_price','location', 'location_name', 'mainImage', 'url', 'longtitude', 'latitude','images', 'uploaded_images', 'amenities', 'amenities_list', 'availability_dates', 'availability_dates_list', 'category', 'bedroomImages', 'bedroomUploaded_images', 'resort_feedbacks')
 
     def create(self, validated_data):
         uploaded_images = validated_data.pop("uploaded_images")
@@ -115,3 +116,12 @@ class ResortSerializer(serializers.ModelSerializer):
         for bedroomImg in bedroomUploaded_images:
             newresort_image = BedroomImages.objects.create(resort_id=resort_id, img=bedroomImg)
         return resort_id
+
+    def get_user(self, obj):
+        data = {}
+        if obj.user:
+            data["id"] = obj.user.id
+            data["full_name"] = (
+                    obj.user.first_name + " " + obj.user.last_name
+            )
+        return data
