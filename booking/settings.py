@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'apps.crm',
     'apps.users',
     'apps.admins',
+    'apps.order',
     # build apps
     'rest_framework',
     'rest_framework_simplejwt',
